@@ -1,0 +1,17 @@
+.wholeFooter {
+  width: 100%;
+}
+
+.leftDiv {
+  background-color: hotpink;
+}
+
+.centerDiv {
+  background-color: turquoise;
+  color: var(--lightTxt);
+  font-size: 1.25rem;
+}
+
+.rightDiv {
+  background-color: seagreen;
+}
