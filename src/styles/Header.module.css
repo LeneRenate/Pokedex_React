@@ -1,0 +1,25 @@
+.wholeHeader {
+  width: 100%;
+}
+
+/*
+header  .wholeHeader
+> div  .imgWrapper  > img  .headerImg
+> h1  .pageTitle
+> ul  .typesKeyList  > li  .typeKeys
+*/
+
+.imgWrapper {
+}
+
+.headerImg {
+}
+
+.pageTitle {
+}
+
+.typesKeyList {
+}
+
+.typeKeys {
+}
