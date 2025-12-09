@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  --darkTxt: rgb(45, 45, 45);
+  --lightTxt: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: violet;
+
+  font-family: calibri, sans-serif;
+  font-size: 1rem;
+  color: var(--darkTxt);
+}

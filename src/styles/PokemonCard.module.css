@@ -1,0 +1,22 @@
+.pokeCard {
+}
+
+.imgWrapper {
+}
+
+.pokeImg {
+  width: 100%;
+  height: auto;
+}
+
+.txtWrapper {
+  color: var(--darkTxt);
+}
+
+.pokeID {
+  font-size: 1rem;
+}
+
+.pokeName {
+  font-size: 1.25rem;
+}
