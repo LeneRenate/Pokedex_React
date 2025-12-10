@@ -1,0 +1,14 @@
+.pokeDisplay {
+  width: 90%;
+  margin: 1.5rem auto;
+}
+
+.homeTitle {
+  font-size: 2rem;
+  color: white;
+}
+
+.cardWrapper {
+  width: 200px;
+  height: 300px;
+}

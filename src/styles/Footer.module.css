@@ -4,15 +4,15 @@
 }
 
 .leftDiv {
-  background-color: hotpink;
+  background-color: turquoise;
 }
 
 .centerDiv {
-  background-color: turquoise;
+  background-color: hotpink;
   color: var(--lightTxt);
   font-size: 1.25rem;
 }
 
 .rightDiv {
-  background-color: seagreen;
+  background-color: lightseagreen;
 }

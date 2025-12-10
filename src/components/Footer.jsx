@@ -2,12 +2,16 @@ import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className={styles.wholeFooter}>
-      <div className={`w-1/4 ${styles.leftDiv}`}>{/* image */}</div>
-      <div className={`w-1/2 ${styles.centerDiv}`}>
-        <p>Copyright Lene Renate D. Rossebø</p>
+    <footer className={`flex flex-row ${styles.wholeFooter}`}>
+      <div className={`w-1/4 ${styles.leftDiv}`}>
+        <p>Here comes an image</p>
       </div>
-      <div className={`w-1/4 ${styles.rightDiv}`}>{/* API */}</div>
+      <div className={`w-1/2 ${styles.centerDiv}`}>
+        <p></p>
+      </div>
+      <div className={`w-1/4 ${styles.rightDiv}`}>
+        <p>Here comes the API</p>
+      </div>
     </footer>
   );
 }
