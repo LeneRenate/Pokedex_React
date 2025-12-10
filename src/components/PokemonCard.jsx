@@ -11,6 +11,18 @@ export default function PokemonCard(props) {
 
   // style={{ border: "solid black", margin: "10px" }}
 
+  // function App() {
+  //   const isBackgroundRed = true;
+
+  //   return (
+  //     <div
+  //       style={{
+  //         backgroundColor: isBackgroundRed ? 'red' : 'blue',
+  //       }}
+  //     />
+  //   );
+  // }
+
   return (
     <article
       title={name}
