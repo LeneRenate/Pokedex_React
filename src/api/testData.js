@@ -51,4 +51,25 @@ const testArray = [
   },
 ];
 
-export { testPokemon, testArray };
+const pokemonTypes = [
+  "normal",
+  "fire",
+  "water",
+  "grass",
+  "electric",
+  "ice",
+  "fighting",
+  "poison",
+  "ground",
+  "flying",
+  "psychic",
+  "bug",
+  "rock",
+  "ghost",
+  "dragon",
+  "dark",
+  "steel",
+  "fairy",
+];
+
+export { testPokemon, testArray, pokemonTypes };

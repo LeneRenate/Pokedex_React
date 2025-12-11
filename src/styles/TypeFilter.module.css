@@ -1,0 +1,26 @@
+.typeFilterSection {
+  width: 80%;
+  background-color: lime;
+}
+
+.typeGridHeader {
+  font-size: 1.25rem;
+  letter-spacing: 5%;
+}
+
+/* .typeGrid {
+
+} */
+
+.typeGrid li {
+  background-color: lightcoral;
+  border: 1.5px solid coral;
+}
+
+.typeGrid li:hover {
+  cursor: pointer;
+}
+
+/* .typesBtns {
+
+} */

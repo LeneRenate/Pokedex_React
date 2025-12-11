@@ -1,19 +1,25 @@
+import { fetchAllTypes } from "../api/getCategories";
 import { testPokemon } from "../api/testData";
 import PokemonCard from "../components/PokemonCard";
+import TypeFilter from "../components/TypeFilter";
 import styles from "../styles/HomePage.module.css";
 
 export function HomePage() {
-  console.log(testPokemon);
+  // console.log(testPokemon);
+
+  const typesArray = fetchAllTypes();
+  console.log(typesArray);
 
   const p = testPokemon;
-  console.log(p.name);
-  console.log(p.image);
+  // console.log(p.name);
+  // console.log(p.image);
 
   const typeString = p.types.join(", ");
-  console.log(typeString);
+  // console.log(typeString);
 
   return (
     <>
+      <TypeFilter />
       <section className={` ${styles.pokeDisplay}`}>
         <h2 className={` ${styles.homeTitle}`}>Some pokemons</h2>
         <PokemonCard
