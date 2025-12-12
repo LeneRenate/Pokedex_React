@@ -3,12 +3,14 @@ import pokedexImg from "../assets/pokedex.png";
 
 export default function Header() {
   return (
-    <header className={`p-6 flex flex-row ${styles.wholeHeader}`}>
-      <div className={styles.imgWrapper}>
+    <header
+      className={`w-full h-28 sticky top-0 p-6 flex flex-row ${styles.wholeHeader}`}
+    >
+      <div className={`h-4/5 ${styles.imgWrapper}`}>
         <img
           src={pokedexImg}
           alt="pokedex from the TV series"
-          className={styles.headerImg}
+          className={`h-full ${styles.headerImg}`}
         />
       </div>
       <h1 className={styles.pageTitle}>PokeDex</h1>
