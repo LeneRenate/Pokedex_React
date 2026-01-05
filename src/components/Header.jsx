@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 import styles from "../styles/Header.module.css";
 import pokedexImg from "../assets/pokedex.png";
-import { pokemonTypes } from "../api/typesList";
+import { pokemonTypes } from "../api/testData";
 import applyTypeStyles from "../utils/typeStyles";
+import capitalize from "../utils/capitalize";
 
 export default function Header() {
   const types = pokemonTypes;
@@ -33,9 +34,9 @@ export default function Header() {
           <li
             key={type}
             ref={(el) => (typeRefs.current[index] = el)}
-            className={`${styles.typeKeys}`}
+            className={`p-1 border rounded-md ${styles.typeKeys}`}
           >
-            {type}
+            {capitalize(type)}
           </li>
         ))}
       </ul>

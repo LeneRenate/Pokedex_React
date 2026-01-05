@@ -13,8 +13,6 @@
 } */
 
 .typeGrid li {
-  background-color: lightcoral;
-  border: 1.5px solid coral;
 }
 
 .typeGrid li:hover {
