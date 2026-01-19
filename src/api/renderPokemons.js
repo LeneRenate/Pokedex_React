@@ -12,4 +12,4 @@ export async function testPokemons(n) {
   return pokemonArray;
 }
 
-// testPokemons(3);
+testPokemons(3);
