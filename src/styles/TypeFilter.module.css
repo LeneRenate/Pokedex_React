@@ -1,11 +1,10 @@
 .typeFilterSection {
-  width: 80%;
   background-color: lime;
 }
 
-.typeGridHeader {
+.typeGridHeading {
   font-size: 1.25rem;
-  letter-spacing: 5%;
+  letter-spacing: 0.05rem;
 }
 
 /* .typeGrid {

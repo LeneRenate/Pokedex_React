@@ -18,8 +18,10 @@ export default function TypeFilter() {
 
   return (
     <>
-      <section className={`flex flex-col ${styles.typeFilterSection}`}>
-        <h3 className={styles.typeGridHeader}>Filter by types:</h3>
+      <section
+        className={`flex flex-col w-1/2 px-3 pt-2 pb-4 ${styles.typeFilterSection}`}
+      >
+        <h3 className={`pb-2 ${styles.typeGridHeading}`}>Filter by types:</h3>
         <ul className={`grid grid-cols-4 gap-3 ${styles.typeGrid}`}>
           {types.map((type, index) => (
             <li

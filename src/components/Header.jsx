@@ -29,17 +29,19 @@ export default function Header() {
         />
       </div>
       <h1 className={`p-4 pl-8 ${styles.pageTitle}`}>PokeDex</h1>
-      <ul className={`grid grid-cols-6 gap-3 ${styles.typesKeyList}`}>
-        {types.map((type, index) => (
-          <li
-            key={type}
-            ref={(el) => (typeRefs.current[index] = el)}
-            className={`p-1 border rounded-md ${styles.typeKeys}`}
-          >
-            {capitalize(type)}
-          </li>
-        ))}
-      </ul>
+      <div className="m-12">
+        <ul className={`grid grid-cols-6 gap-3 ${styles.typesKeyList}`}>
+          {types.map((type, index) => (
+            <li
+              key={type}
+              ref={(el) => (typeRefs.current[index] = el)}
+              className={`px-1.25 py-0.75 border rounded-md ${styles.typeKeys}`}
+            >
+              {capitalize(type)}
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }
