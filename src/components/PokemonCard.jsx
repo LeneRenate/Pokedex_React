@@ -1,6 +1,7 @@
 import styles from "../styles/PokemonCard.module.css";
 import capitalize from "../utils/capitalize";
 import formatID from "../utils/formatID";
+import { getSprite } from "../utils/getSprite";
 // import { applyTypeBackground, applyTypeBorder } from "../utils/typeStyles";
 
 export default function PokemonCard(props) {
@@ -8,20 +9,7 @@ export default function PokemonCard(props) {
 
   const name = capitalize(title);
   const number = formatID(id);
-
-  // style={{ border: "solid black", margin: "10px" }}
-
-  // function App() {
-  //   const isBackgroundRed = true;
-
-  //   return (
-  //     <div
-  //       style={{
-  //         backgroundColor: isBackgroundRed ? 'red' : 'blue',
-  //       }}
-  //     />
-  //   );
-  // }
+  const sprite = getSprite(id);
 
   return (
     <article
@@ -33,7 +21,7 @@ export default function PokemonCard(props) {
       // }}
     >
       <div className={styles.imgWrapper}>
-        <img className={styles.pokeImg} src={image} alt={name} />
+        <img className={styles.pokeImg} src={sprite} alt={name} />
       </div>
       <div
         className={`flex flex-col justify-evenly items-start ${styles.txtWrapper}`}

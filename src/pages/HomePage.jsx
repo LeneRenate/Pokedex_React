@@ -1,45 +1,36 @@
-import { fetchAllTypes } from "../api/getCategories";
-import { testPokemon } from "../api/testData";
-import PokemonCard from "../components/PokemonCard";
-import TypeFilter from "../components/TypeFilter";
+import { useState, useEffect } from "react";
 import styles from "../styles/HomePage.module.css";
+import { getSprite } from "../utils/getSprite";
+import { fetchPokemon } from "../api/axiosPokeAPI";
+import capitalize from "../utils/capitalize";
+import formatID from "../utils/formatID";
 
 export function HomePage() {
-  // console.log(testPokemon);
+  const [pokemon, setPokemon] = useState(null);
 
-  const typesArray = fetchAllTypes();
-  console.log(typesArray);
+  useEffect(() => {
+    async function loadPokemon() {
+      const data = await fetchPokemon(7);
+      setPokemon(data);
+      console.log("data: ", data);
+    }
+    loadPokemon();
+  }, []);
 
-  const p = testPokemon;
-  // console.log(p.name);
-  // console.log(p.image);
+  if (!pokemon) return <div>Loading...</div>;
 
-  const typeString = p.types.join(", ");
-  // console.log(typeString);
+  const pName = capitalize(pokemon.name);
+  const pId = formatID(pokemon.id);
+  const sprite = getSprite(pokemon.id);
 
   return (
     <>
-      <TypeFilter />
+      {/* <TypeFilter /> */}
       <section className={` ${styles.pokeDisplay}`}>
         <h2 className={` ${styles.homeTitle}`}>Some pokemons</h2>
-        <PokemonCard
-          id={p.id}
-          image={p.image}
-          title={p.name}
-          types={typeString}
-        />
-        {/* <ul className={`flex flex-row g-8`}>
-          {testArray.forEach((p) => (
-            <li key={p.id} className={` ${styles.cardWrapper}`}>
-              <PokemonCard
-                id={p.id}
-                image={p.image}
-                title={p.name}
-                types={typeString}
-              />
-            </li>
-          ))}
-        </ul> */}
+        <h3>Name: {pName}</h3>
+        <h3>Id: {pId}</h3>
+        <img src={sprite} />
       </section>
     </>
   );
