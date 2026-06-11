@@ -12,7 +12,9 @@ export default function Header() {
   useEffect(() => {
     typeRefs.current.forEach((element, index) => {
       if (element) {
+        // console.log("Applying styles to: ", types[index], element);
         applyTypeStyles(element, [types[index]]);
+        // console.log("Background: ", element.style.backgroundColor);
       }
     });
   }, [types]);
@@ -29,13 +31,14 @@ export default function Header() {
         />
       </div>
       <h1 className={`p-4 pl-8 ${styles.pageTitle}`}>PokeDex</h1>
-      <div className="m-12">
+      <div className="m-20 flex gap-1">
+        <p className={`${styles.keyP}`}>Types Key</p>
         <ul className={`grid grid-cols-6 gap-3 ${styles.typesKeyList}`}>
           {types.map((type, index) => (
             <li
               key={type}
               ref={(el) => (typeRefs.current[index] = el)}
-              className={`px-1.25 py-0.75 border rounded-md ${styles.typeKeys}`}
+              className={`px-1.5 py-1 border rounded-md ${styles.typeKeys}`}
             >
               {capitalize(type)}
             </li>

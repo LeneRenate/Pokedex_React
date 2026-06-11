@@ -13,7 +13,12 @@ async function fetchPokemon(nameOrId) {
   return res.data;
 }
 
+async function fetchSpecies(id) {
+  const res = await fetch(`${BASE_URL}/pokemon-species/${id}`);
+  return await res.json();
+}
+
 // fetchPokemon(7);
 // fetchPokemon("weedle");
 
-export { BASE_URL, IMG_URL, fetchPokemon };
+export { BASE_URL, IMG_URL, fetchPokemon, fetchSpecies };

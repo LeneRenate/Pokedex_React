@@ -1,37 +1,57 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/HomePage.module.css";
 import { getSprite } from "../utils/getSprite";
 import { fetchPokemon } from "../api/axiosPokeAPI";
 import capitalize from "../utils/capitalize";
 import formatID from "../utils/formatID";
+import { fetchGeneration, normalizeGeneration } from "../api/genList";
 
 export function HomePage() {
-  const [pokemon, setPokemon] = useState(null);
+  const [allPokemon, setAllPokemon] = useState([]);
+  const [activeGens, setActiveGens] = useState([1]);
+  const [loading, setLoading] = useState(true);
+
+  // console.log("activeGens: ", activeGens);
 
   useEffect(() => {
-    async function loadPokemon() {
-      const data = await fetchPokemon(7);
-      setPokemon(data);
-      console.log("data: ", data);
+    async function loadAllPokemon() {
+      setLoading(true);
+      const ids = [...Array(1025)].map((_, i) => i + 1);
+
+      const pokemonList = await Promise.all(
+        ids.map(async (id) => {
+          const [pokemon, generation] = await Promise.all([
+            fetchPokemon(id),
+            fetchGeneration(id),
+          ]);
+          return {
+            ...pokemon,
+            gen: normalizeGeneration(generation),
+          };
+        }),
+      );
+
+      setAllPokemon(pokemonList);
+      setLoading(false);
     }
-    loadPokemon();
+
+    loadAllPokemon();
   }, []);
 
-  if (!pokemon) return <div>Loading...</div>;
+  console.log("allPokemon: ", allPokemon);
 
-  const pName = capitalize(pokemon.name);
-  const pId = formatID(pokemon.id);
-  const sprite = getSprite(pokemon.id);
+  const displayed = allPokemon.filter((p) => activeGens.includes(p.gen));
+
+  console.log("displayed: ", displayed);
 
   return (
     <>
       {/* <TypeFilter /> */}
-      <section className={` ${styles.pokeDisplay}`}>
-        <h2 className={` ${styles.homeTitle}`}>Some pokemons</h2>
-        <h3>Name: {pName}</h3>
-        <h3>Id: {pId}</h3>
-        <img src={sprite} />
-      </section>
+
+      {/* GenToggle */}
+
+      {/* Pokemons */}
+      <section className={` ${styles.pokeDisplay}`}></section>
     </>
   );
 }

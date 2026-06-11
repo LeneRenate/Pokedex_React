@@ -22,8 +22,17 @@ header  .wholeHeader
   letter-spacing: 5;
 }
 
-.typesKeyList {
+.keyP {
+  font-size: 1.1rem;
+  color: var(--darkTxt);
+  font-weight: 600;
+  text-align: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
+
+/* .typesKeyList {
+} */
 
 .typeKeys {
   font-size: 0.75rem;
