@@ -2,6 +2,7 @@
   background-image: url("../assets/PokedexPattern.png");
   background-size: 50svh;
   background-color: var(--background);
+  border-bottom: 1.5px solid var(--darkTxt);
 }
 
 /*

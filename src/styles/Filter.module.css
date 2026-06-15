@@ -1,0 +1,16 @@
+.typeFilterSection {
+}
+
+.gridHeading {
+  font-size: 1.25rem;
+  letter-spacing: 0.05rem;
+  padding-bottom: 0.5rem;
+}
+
+.typeGrid {
+  width: fit-content;
+}
+
+li:hover {
+  cursor: pointer;
+}

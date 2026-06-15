@@ -8,11 +8,11 @@ export default function Footer() {
         <img src={pokeballImg} alt="Pokeball" className="h-full pl-6" />
       </div>
       <div
-        className={`w-1/2 flex justify-center items-end p-0.75 border-x-blue-400 ${styles.centerDiv}`}
+        className={`w-1/2 flex justify-center items-end p-0.75 ${styles.centerDiv}`}
       >
         <p>Coded by Lene Renate Rossebø</p>
       </div>
-      <div className={`w-1/4 p-4 flex items-center ${styles.rightDiv}`}>
+      <div className={`w-1/4 p-4 flex items-center  ${styles.rightDiv}`}>
         <a
           href="https://pokeapi.co/"
           target="_blank"

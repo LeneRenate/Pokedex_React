@@ -1,19 +1,19 @@
 .wholeFooter {
   width: 100%;
-  height: 100px;
+  height: 50px;
+  background-color: var(--pokeball-light);
+  border-top: 1.5px solid var(--pokeball-dark);
 }
 
 .leftDiv {
-  background-color: turquoise;
+  border-right: 1.5px solid var(--pokeball-dark);
 }
 
 .centerDiv {
-  background-color: hotpink;
-  /* background-color: white; */
   color: var(--lightTxt);
   font-size: 1rem;
 }
 
 .rightDiv {
-  background-color: lightseagreen;
+  border-left: 1.5px solid var(--pokeball-dark);
 }

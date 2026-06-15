@@ -1,39 +1,33 @@
-import { useEffect, useRef } from "react";
 import { pokemonTypes } from "../api/testData";
-import styles from "../styles/TypeFilter.module.css";
-import applyTypeStyles from "../utils/typeStyles";
+import styles from "../styles/Filter.module.css";
 import capitalize from "../utils/capitalize";
+import getTypeStyles from "../utils/typeStyles";
 
-export default function TypeFilter() {
+export default function TypeFilter({ activeType, onTypeChange }) {
   const types = pokemonTypes;
-  const typeRefs = useRef([]);
-
-  useEffect(() => {
-    typeRefs.current.forEach((element, index) => {
-      if (element) {
-        applyTypeStyles(element, [types[index]]);
-      }
-    });
-  }, [types]);
 
   return (
     <>
-      <section
-        className={`flex flex-col w-1/2 px-3 pt-2 pb-4 ${styles.typeFilterSection}`}
-      >
-        <h3 className={`pb-2 ${styles.typeGridHeading}`}>Filter by types:</h3>
-        <ul className={`grid grid-cols-4 gap-3 ${styles.typeGrid}`}>
-          {types.map((type, index) => (
+      <section className={`flex flex-col p-6 ${styles.typeFilterSection}`}>
+        <h3 className={styles.gridHeading}>Filter by type:</h3>
+        <ul className={`grid grid-cols-7 gap-3 ${styles.typeGrid}`}>
+          {types.map((type) => (
             <li
               key={type}
-              ref={(el) => (typeRefs.current[index] = el)}
-              className={`p-1 border rounded-md ${styles.typesBtns}`}
+              style={getTypeStyles([type])}
+              className={`max-w-32 py-1 px-2 border rounded-md ${activeType === type ? "ring-2 ring-white" : ""}`}
+              onClick={() => {
+                onTypeChange(type);
+              }}
             >
               {capitalize(type)}
             </li>
           ))}
           <li
-            className={`p-1 border rounded-md  bg-[var(--pokeball-light)] border-[var(--pokeball-dark)] ${styles.typesBtns}`}
+            className={`p-1 border rounded-md  bg-(--pokeball-light) border-(--pokeball-dark)`}
+            onClick={() => {
+              onTypeChange("all");
+            }}
           >
             Show all
           </li>
