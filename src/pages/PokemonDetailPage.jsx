@@ -67,12 +67,13 @@ export default function PokemonDetailPage() {
 
           <div className="pt-16">
             <p className={`text-4xl`}>{idNo}</p>
-            <h2 className={`font-extrabold text-8xl`}>{name}</h2>
+            <h2 className={`font-extrabold text-8xl underline`}>{name}</h2>
           </div>
         </article>
 
         {/* Primary info */}
         <article className={`flex flex-col text-lg leading-8`}>
+          <h3 className="text-xl font-semibold">Primary Info</h3>
           <p>Type(s): {types.join(", ")}</p>
           <p>Category: {category}</p>
           <p>Height: {height.toFixed(1)} m</p>
