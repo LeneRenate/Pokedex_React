@@ -21,7 +21,7 @@ export default function PokemonDetailPage() {
     ]);
   }, [id]);
 
-  if (!pokemon || !species) return <p>Loading..</p>;
+  if (!pokemon || !species) return <p>Catching the pokemon...</p>;
 
   // console.log("pokemon: ", pokemon);
   // console.log("species: ", species);
@@ -43,6 +43,11 @@ export default function PokemonDetailPage() {
     abilities.push(abilityArray[i].ability.name);
   }
 
+  const weight = pokemon.weight / 10;
+  const height = pokemon.height / 10;
+
+  const category = species.genera[7].genus.toLowerCase();
+
   let habitat = "";
 
   if (species.habitat) {
@@ -52,33 +57,38 @@ export default function PokemonDetailPage() {
   }
 
   return (
-    <section className={`p-8`}>
-      {/* img + name + idnumber */}
-      <article className={`flex flex-row items-center`}>
-        <div>
-          <img src={sprite} alt={name} />
-        </div>
+    <section className={`flex flex-col p-8`}>
+      <div className="flex flex-row space-x-40 items-center">
+        {/* img + name + idnumber */}
+        <article className={`flex flex-row items-start`}>
+          <div>
+            <img src={sprite} alt={name} />
+          </div>
 
-        <div>
-          <p className={`text-4xl`}>{idNo}</p>
-          <h2 className={`font-extrabold text-8xl`}>{name}</h2>
-        </div>
-      </article>
+          <div className="pt-16">
+            <p className={`text-4xl`}>{idNo}</p>
+            <h2 className={`font-extrabold text-8xl`}>{name}</h2>
+          </div>
+        </article>
 
-      {/* Primary info */}
-      <article className={`flex flex-col`}>
-        <p>Type(s): {types.join(", ")}</p>
-        <p>Category</p>
-        <p>Height</p>
-        <p>Weight</p>
-        <p>Abilities: {abilities.join(", ")}</p>
-        <p>Habitat: {habitat}</p>
-      </article>
+        {/* Primary info */}
+        <article className={`flex flex-col text-lg leading-8`}>
+          <p>Type(s): {types.join(", ")}</p>
+          <p>Category: {category}</p>
+          <p>Height: {height.toFixed(1)} m</p>
+          <p>Weight: {weight.toFixed(1)} kg</p>
+          <p>Abilities: {abilities.join(", ")}</p>
+          <p>Habitat: {habitat}</p>
+        </article>
+      </div>
 
-      {/* Attack + info */}
-      <article></article>
+      <div className="flex flex-row">
+        {/* Attack + info */}
+        <article></article>
 
-      {/* Evolving */}
+        {/* Evolving */}
+        <article></article>
+      </div>
     </section>
   );
 }

@@ -19,7 +19,7 @@ export default function GenToggle({ activeGens, onGenChange }) {
           <li
             key={gen}
             onClick={() => handleClick(gen)}
-            className={`min-w-15 py-1 px-2 border rounded-md ${activeGens.includes(gen) ? "bg-green-300" : ""}`}
+            className={`min-w-15 py-1 px-2 border rounded-md ${activeGens.includes(gen) ? "bg-green-600" : ""}`}
           >
             Gen {gen}
           </li>
