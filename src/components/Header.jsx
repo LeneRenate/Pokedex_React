@@ -1,7 +1,6 @@
 import styles from "../styles/Header.module.css";
 import pokedexImg from "../assets/pokedex.png";
 import { pokemonTypes } from "../api/testData";
-import capitalize from "../utils/capitalize";
 import getTypeStyles from "../utils/typeStyles";
 import { Link } from "react-router-dom";
 
@@ -26,14 +25,14 @@ export default function Header() {
       </Link>
       <div className="m-20 flex gap-1 items-center">
         <p className={`${styles.keyP}`}>Types Key</p>
-        <ul className={`grid grid-cols-9 gap-3 ${styles.typesKeyList}`}>
+        <ul className={`grid grid-cols-9 gap-3 ml-2 ${styles.typesKeyList}`}>
           {types.map((t) => (
             <li
               key={t}
-              className={`px-1.5 py-1 border rounded-md cursor-default ${styles.typeKeys}`}
+              className={`px-1.5 py-1 border rounded-md cursor-crosshair ${styles.typeKeys}`}
               style={getTypeStyles([t])}
             >
-              {capitalize(t)}
+              {t.toUpperCase()}
             </li>
           ))}
         </ul>

@@ -48,13 +48,7 @@ export default function PokemonDetailPage() {
 
   const category = species.genera[7].genus.toLowerCase();
 
-  let habitat = "";
-
-  if (species.habitat) {
-    habitat = species.habitat.name;
-  } else {
-    habitat = "unknown";
-  }
+  const habitat = species.habitat?.name ?? "unknown";
 
   return (
     <section className={`flex flex-col p-8`}>
