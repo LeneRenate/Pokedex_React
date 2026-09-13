@@ -29,7 +29,7 @@ export default function Header() {
           {types.map((t) => (
             <li
               key={t}
-              className={`px-1.5 py-1 border rounded-md cursor-crosshair ${styles.typeKeys}`}
+              className={`px-1.5 py-1 border rounded-md ${styles.typeKeys}`}
               style={getTypeStyles([t])}
             >
               {t.toUpperCase()}

@@ -15,7 +15,7 @@ export default function TypeFilter({ activeType, onTypeChange }) {
             <li
               key={type}
               style={getTypeStyles([type])}
-              className={`max-w-32 py-1 px-2 border rounded-md ${activeType === type ? "ring-2 ring-white" : ""}`}
+              className={`max-w-32 py-1 px-2 border rounded-md cursor-pointer ${activeType === type ? "ring-2 ring-white" : ""}`}
               onClick={() => {
                 onTypeChange(type);
               }}
@@ -24,7 +24,7 @@ export default function TypeFilter({ activeType, onTypeChange }) {
             </li>
           ))}
           <li
-            className={`p-1 border rounded-md  bg-(--pokeball-light) border-(--pokeball-dark)`}
+            className={`p-1 border rounded-md cursor-pointer bg-(--pokeball-light) border-(--pokeball-dark)`}
             onClick={() => {
               onTypeChange("all");
             }}

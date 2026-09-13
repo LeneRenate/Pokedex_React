@@ -51,7 +51,7 @@ export default function PokemonDetailPage() {
   const habitat = species.habitat?.name ?? "unknown";
 
   return (
-    <section className={`flex flex-col p-8`}>
+    <section className={`flex flex-col p-8 bg-stone-200`}>
       <div className="flex flex-row space-x-40 items-center">
         {/* img + name + idnumber */}
         <article className={`flex flex-row items-start`}>

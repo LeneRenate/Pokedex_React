@@ -42,6 +42,6 @@ header  .wholeHeader
 .typeKeys {
   font-size: 0.75rem;
   font-weight: 500;
-  /* cursor: default;
-  user-select: none; */
+  cursor: default;
+  user-select: none;
 }
