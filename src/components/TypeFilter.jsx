@@ -1,4 +1,4 @@
-import { pokemonTypes } from "../api/testData";
+import { pokemonTypes } from "../api/typesList.js";
 import styles from "../styles/Filter.module.css";
 import capitalize from "../utils/capitalize";
 import getTypeStyles from "../utils/typeStyles";
@@ -10,7 +10,9 @@ export default function TypeFilter({ activeType, onTypeChange }) {
     <>
       <section className={`flex flex-col p-6 ${styles.typeFilterSection}`}>
         <h3 className={styles.gridHeading}>Filter by type:</h3>
-        <ul className={`grid grid-cols-7 gap-3 ${styles.typeGrid}`}>
+        <ul
+          className={`grid grid-cols-7 2xl:grid-cols-10 gap-3 ${styles.typeGrid}`}
+        >
           {types.map((type) => (
             <li
               key={type}

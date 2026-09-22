@@ -1,0 +1,9 @@
+.searchInput {
+  background-color: white;
+  border-color: var(--pokeball-dark);
+}
+
+.searchBtn {
+  background-color: var(--pokeball-light);
+  border-color: var(--pokeball-dark);
+}

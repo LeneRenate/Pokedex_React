@@ -14,7 +14,7 @@ export default function GenToggle({ activeGens, onGenChange }) {
   return (
     <section className="p-6">
       <h3 className={`${styles.gridHeading}`}>Toggle generations</h3>
-      <ul className="grid grid-cols-3 gap-3">
+      <ul className="grid grid-cols-3 2xl:grid-cols-5 gap-3">
         {gens.map((gen) => (
           <li
             key={gen}

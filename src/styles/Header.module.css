@@ -5,19 +5,6 @@
   border-bottom: 1.5px solid var(--darkTxt);
 }
 
-/*
-header  .wholeHeader
-> div  .imgWrapper  > img  .headerImg
-> h1  .pageTitle
-> ul  .typesKeyList  > li  .typeKeys
-*/
-
-/* .imgWrapper {
-} */
-
-/* .headerImg {
-} */
-
 .pageTitle {
   font-size: 3rem;
   letter-spacing: 5;
@@ -35,9 +22,6 @@ header  .wholeHeader
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
-
-/* .typesKeyList {
-} */
 
 .typeKeys {
   font-size: 0.75rem;

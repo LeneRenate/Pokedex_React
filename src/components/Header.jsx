@@ -1,6 +1,6 @@
 import styles from "../styles/Header.module.css";
 import pokedexImg from "../assets/pokedex.png";
-import { pokemonTypes } from "../api/testData";
+import { pokemonTypes } from "../api/typesList";
 import getTypeStyles from "../utils/typeStyles";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
@@ -45,4 +45,3 @@ export default function Header() {
     </header>
   );
 }
-// bg - [--card - bg];
