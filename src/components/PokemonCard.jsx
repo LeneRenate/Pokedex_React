@@ -21,7 +21,7 @@ export default function PokemonCard(props) {
   const typeStyle = getTypeStyles(typesArray);
 
   return (
-    <Link to={`pokemon/${id}`}>
+    <Link to={`/pokemon/${id}`}>
       <article
         title={name}
         className={`flex flex-col justify-between items-center border rounded-3xl p-4 ${styles.pokeCard}`}

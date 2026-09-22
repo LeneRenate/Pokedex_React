@@ -24,7 +24,7 @@ The Pokédex is my go-to project whenever I pick up something new. Building the 
 - **Combined filters** — Generation and type filters work together simultaneously.
 - **Detail Page** — Navigate to a dedicated page per Pokémon with extended info: type(s), abilities, habitat, height, and weight.
 - **Progressive loading** — Pokémon are fetched and rendered in batches of 50 so the page populates as data arrives.
-- **Search** — _(in progress)_
+- **Search** — Look up Pokémon by name from the search bar in the header; results land on a dedicated results page (case-insensitive, minimum 3 characters), with clear messaging while loading or when nothing matches.
 
 ## Tech Stack
 

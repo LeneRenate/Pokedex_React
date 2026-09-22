@@ -3,6 +3,8 @@ import pokedexImg from "../assets/pokedex.png";
 import { pokemonTypes } from "../api/testData";
 import getTypeStyles from "../utils/typeStyles";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
+import capitalize from "../utils/capitalize";
 
 export default function Header() {
   const types = pokemonTypes;
@@ -20,7 +22,7 @@ export default function Header() {
           />
         </Link>
       </div>
-      <Link to="/Pokedex_React">
+      <Link to="/">
         <h1 className={`p-4 pl-8 ${styles.pageTitle}`}>PokeDex</h1>
       </Link>
       <div className="m-20 flex gap-1 items-center">
@@ -32,10 +34,13 @@ export default function Header() {
               className={`px-1.5 py-1 border rounded-md ${styles.typeKeys}`}
               style={getTypeStyles([t])}
             >
-              {t.toUpperCase()}
+              {capitalize(t)}
             </li>
           ))}
         </ul>
+      </div>
+      <div>
+        <SearchBar />
       </div>
     </header>
   );
