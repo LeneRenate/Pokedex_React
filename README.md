@@ -2,6 +2,8 @@
 
 A browser-based Pokédex built with React that fetches live data from the [PokéAPI](https://pokeapi.co/) and lets you browse, filter, and inspect all 1025 Pokémon.
 
+![Home page with Pokémon grid](docs/screenshots/home-page.png)
+
 ## Background
 
 The Pokédex is my go-to project whenever I pick up something new. Building the same familiar product lets me focus on the technology rather than the problem domain — so the differences between versions reflect what I've actually learned.
@@ -25,6 +27,17 @@ The Pokédex is my go-to project whenever I pick up something new. Building the 
 - **Detail Page** — Navigate to a dedicated page per Pokémon with extended info: type(s), abilities, habitat, height, and weight.
 - **Progressive loading** — Pokémon are fetched and rendered in batches of 50 so the page populates as data arrives.
 - **Search** — Look up Pokémon by name from the search bar in the header; results land on a dedicated results page (case-insensitive, minimum 3 characters), with clear messaging while loading or when nothing matches.
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/detail-page.png" alt="Pokémon detail page" width="400" /></td>
+    <td><img src="docs/screenshots/types-filter-all-gens.png" alt="Type filter across all generations" width="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/search-valid.png" alt="Search results for a valid query" width="400" /></td>
+    <td><img src="docs/screenshots/search-no-results.png" alt="Search with no matching results" width="400" /></td>
+  </tr>
+</table>
 
 ## Tech Stack
 
