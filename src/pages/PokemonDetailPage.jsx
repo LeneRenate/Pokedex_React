@@ -21,9 +21,6 @@ export default function PokemonDetailPage() {
 
   if (!pokemon || !species) return <p>Catching the pokemon...</p>;
 
-  // console.log("pokemon: ", pokemon);
-  // console.log("species: ", species);
-
   const idNo = formatID(id);
   const name = capitalize(pokemon.name);
 
