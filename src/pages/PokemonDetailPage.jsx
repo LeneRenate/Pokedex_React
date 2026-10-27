@@ -1,5 +1,3 @@
-// Make into a page!
-
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchPokemon, fetchSpecies } from "../api/axiosPokeAPI";
@@ -46,7 +44,8 @@ export default function PokemonDetailPage() {
   const weight = pokemon.weight / 10;
   const height = pokemon.height / 10;
 
-  const category = species.genera[7].genus.toLowerCase();
+  const generaEn = species.genera.find((g) => g.language.name === "en");
+  const category = generaEn.genus.toLowerCase();
 
   const habitat = species.habitat?.name ?? "unknown";
 
